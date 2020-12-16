@@ -1,0 +1,32 @@
+{
+  "name": "youtube-counter",
+  "version": "0.0.1",
+  "description": "YouTube -> Particle Counter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshahzada/youtube-subscriber"
+  },
+  "author": "Kaspar Shahzada <kshahzada45@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore 'data.cache.json' --exec \"babel-node src/index.js\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "babel-plugin-source-map-support": "^2.1.3",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "google-auth-library": "^6.1.3",
+    "googleapis": "^66.0.0",
+    "particle-api-js": "^9.1.0",
+    "qs": "^6.9.4",
+    "source-map-support": "^0.5.19"
+  }
+}
