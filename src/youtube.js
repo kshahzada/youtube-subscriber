@@ -1,5 +1,6 @@
 const getSubscriberCount = async (channel, outputCallback) => {
     var fs = require('fs');
+    const path = require("path");
     var readline = require('readline');
     var { google } = require('googleapis');
     var OAuth2 = google.auth.OAuth2;
@@ -12,7 +13,7 @@ const getSubscriberCount = async (channel, outputCallback) => {
     var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json';
 
     // Load client secrets from a local file.
-    fs.readFile('./src/google.creds.json', function processClientSecrets(err, content) {
+    fs.readFile(path.resolve(__dirname, './google.creds.json'), function processClientSecrets(err, content) {
         if (err) {
             console.log('Error loading client secret file: ' + err);
             return;

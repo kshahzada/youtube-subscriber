@@ -8,7 +8,6 @@ export const setupParticle = async () => {
     return particle.login({ username: username, password: password }).then(
         function (data) {
             token = data.body.access_token;
-            console.log(token)
         },
         function (err) {
             console.log('Could not log in.', err);
@@ -61,7 +60,6 @@ export const setSubCount = (deviceId, count) => {
     const fnPr = callParticleFunction({ deviceId, name: 'syncSub', argument: count, auth: token });
     return fnPr.then(
         function (data) {
-            console.log({data})
             console.log('Display set to:', data.data.return_value);
             return data;
         }, function (err) {

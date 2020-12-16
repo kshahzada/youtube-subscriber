@@ -1,25 +1,23 @@
-# Node.js, Babel(ES6) Boilerplate with Visual Studio Code Debugger configurations.
+# YouTube Counter
 
 ## Install
 
 In project root:
 `npm install`
-or
-`yarn`
-
-## Tasks
 
 ### Development (Optional)
-`npm install -g nodemon`  (Install nodemon)
-`npm start` or `yarn start`
+
+`npm run-script watch`
 
 ### Build
-`npm run build` or `yarn build`
 
-### Serve 
-`npm run build && npm run serve`
-or
-`yarn build && yarn serve`
+`npm run-script build`
+### Run on RPi
 
-## Debug
-Simply run debugger(`F5`) on Visual Studio Code.
+Make sure you have PM2 installed.
+`npm run-script build`
+Add your `google.creds.json`, `particle.creds.json`
+Set your initial `data.cache.json` state
+`sudo pm2 startup systemd -u pi`
+in build folder run
+`pm2 start index.js --cron "*/1 * * * *" --name Youtube-Counter`
